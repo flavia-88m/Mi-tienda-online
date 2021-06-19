@@ -5,10 +5,7 @@ import '../cartWidget/cartWidget.css'
 export const CartWidget = () => {
 
     return (
-        <nav>
-            <ul className="iconStyle">
-               <li><FontAwesomeIcon icon={faShoppingCart}/></li>
-            </ul>
-        </nav>
+               <FontAwesomeIcon className="iconStyle" icon={faShoppingCart}/>
+           
     )
 }
