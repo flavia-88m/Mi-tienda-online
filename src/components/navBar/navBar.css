@@ -1,11 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 nav {
     background-color: white;
 }
 
 .linkNav {
     color: black;
-    font-family: 'Lato', sans-serif;
-    font-size: 20;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     font-weight: bold;
     margin: 0 10px;
     margin-left: 130px;
@@ -22,5 +25,8 @@ nav {
 
 .brand {
 padding-left: 10px;
+}
 
+li:hover {
+    border-bottom: 3px solid pink;
 }
