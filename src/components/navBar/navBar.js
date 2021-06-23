@@ -1,4 +1,5 @@
 import logo from '../navBar/logo.jpg'
+import '../navBar/navBar.css'
 import { CartWidget } from '../cartWidget/cartWidget'
 import { ItemListContainer } from '../ItemListContainer/ItemListContainer'
 

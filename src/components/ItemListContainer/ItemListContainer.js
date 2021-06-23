@@ -3,10 +3,10 @@
 export const ItemListContainer = (props) => {
     
     return (
-        <body>
+        <div>
            <h1 className="title">{props.greeting}</h1>
            <h2>{props.greeting2}</h2>
-        </body>
+        </div>
         
     )
 }
