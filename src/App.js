@@ -1,8 +1,9 @@
 
 import './App.css';
-import {NavBar} from './components/navBar/navBar'
+import { NavBar } from './components/navBar/navBar'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
-import {ItemCount} from './components/ItemCount/ItemCount'
+import { ItemCount } from './components/ItemCount/ItemCount'
+import { Item } from './components/Item/Item'
 
 function App() { 
   const welcome = 'HELLO BABES!'
@@ -14,6 +15,7 @@ function App() {
      <ItemListContainer greeting= {welcome}/>
      <ItemListContainer greeting2= {sayHello}/>
      <ItemCount initial={1} stock={9} onAdd={0}/>
+     <Item/>
     </div>
   );
 }
