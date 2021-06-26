@@ -15,11 +15,18 @@ export const ItemCount = ({ initial, stock, onAdd}) => {
 }
 
   const agregarItem = () => {
-      if (addItem !== 0){
+      if (addItem < stock ){
           setAddItem(addItem + 1)
           setStock(newStock - 1)
     }
 }
+
+  const agregarAlCarrito = () => {
+     console.log(`Fueron agregados ${addItem} items al carrito`)
+ }
+
+      console.log(newStock, agregarAlCarrito)
+
 
     return (
         <div>
@@ -29,7 +36,7 @@ export const ItemCount = ({ initial, stock, onAdd}) => {
               <spam>{addItem}</spam>
             <button onClick={agregarItem}>+</button>
             <br></br>                                                                                               
-            <button >Agregar al Carrito</button>
+            <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
              <br></br>
         </div>
     )

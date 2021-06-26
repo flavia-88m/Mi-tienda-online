@@ -3,7 +3,7 @@ import './App.css';
 import { NavBar } from './components/navBar/navBar'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
 import { ItemCount } from './components/ItemCount/ItemCount'
-import { Item } from './components/Item/Item'
+
 
 function App() { 
   const welcome = 'HELLO BABES!'
@@ -14,8 +14,7 @@ function App() {
      <NavBar/>
      <ItemListContainer greeting= {welcome}/>
      <ItemListContainer greeting2= {sayHello}/>
-     <ItemCount initial={1} stock={9} onAdd={0}/>
-     <Item/>
+     <ItemCount initial={1} stock={10} onAdd={0}/>
     </div>
   );
 }
