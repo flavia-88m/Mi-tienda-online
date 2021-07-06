@@ -2,7 +2,7 @@
 import '../ItemCount/ItemCount.css'
 import { useState } from 'react'
 
-export const ItemCount = ({ initial, stock, onAdd}) => {
+export const ItemCount = ({ initial, stock, onAdd }) => {
   const [addItem, setAddItem] = useState(initial)
   const [newStock, setStock] = useState(stock)
   
@@ -31,7 +31,7 @@ export const ItemCount = ({ initial, stock, onAdd}) => {
     return (
         <div className="itemCount">
            <button onClick={eliminarItem}>-</button>
-              <spam>{addItem}</spam>
+              <span>{addItem}</span>
             <button onClick={agregarItem}>+</button>
             <br></br>                                                                                               
             <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
