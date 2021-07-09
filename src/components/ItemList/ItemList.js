@@ -7,7 +7,7 @@ export const ItemList = ({ items }) =>{
          {items.length === 0 ? (
             <span className="loading"></span>
           ) : (
-            items.map(item =><Item item={item}/>)
+            items.map(item =><Item key={item.id} item={item}/>)
           )}
         </>
     )

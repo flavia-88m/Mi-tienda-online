@@ -21,20 +21,13 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
     }
 }
 
-  const agregarAlCarrito = () => {
-     console.log(`Fueron agregados ${addItem} items al carrito`)
- }
-
-      console.log(newStock, agregarAlCarrito)
-
-
     return (
         <div className="itemCount">
            <button onClick={eliminarItem}>-</button>
               <span>{addItem}</span>
             <button onClick={agregarItem}>+</button>
             <br></br>                                                                                               
-            <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
+            <button onClick={onAdd}>Agregar al Carrito</button>
         </div>
     )
 }
