@@ -9,8 +9,8 @@ export const ItemDetail = ({ item }) => {
 
     const onAdd = (event) => {
         //Almacenar el valor de itemCount
-    setItemComprado(event)
-    setItemCompra((event)*item.precio)
+    setItemComprado(event.target.value)
+    setItemCompra((event.target.value)*item.precio)
         //Desaparecer el ItemCount y aparece el button terminar compra
     document.getElementById("itemAgregado").style.display="none"
     document.getElementById("itemTerminarCompra").style.display="block"
@@ -28,7 +28,7 @@ export const ItemDetail = ({ item }) => {
              </section>  
          {/*boton oculto hasta que el usuario haga click */}
            <section id="itemTerminarCompra" className="finalCompra">
-             <p>Tu compra es de: {itemComprado} {item.descripcion} por ${item.precio} tiene un total de ${ItemCompra}</p>
+             <p>Tu compra es de: {itemComprado} {item.descripcion} por ${itemComprado} tiene un total de ${ItemCompra}</p>
                <Link to={'/cart'}>
                  <button>Termina tu compra</button>
                </Link>
