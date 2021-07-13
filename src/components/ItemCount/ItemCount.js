@@ -5,7 +5,8 @@ import { useState } from 'react'
 export const ItemCount = ({ initial, stock, onAdd }) => {
   const [addItem, setAddItem] = useState(initial)
   const [newStock, setStock] = useState(stock)
-  
+  const [QuitarItemCount, setQuitarItemCount] = useState(true)
+
 
   const eliminarItem = () => {
     if (addItem > 0) {
@@ -21,13 +22,15 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
     }
 }
 
+
+
     return (
-        <div className="itemCount">
-           <button onClick={eliminarItem}>-</button>
-              <span>{addItem}</span>
-            <button onClick={agregarItem}>+</button>
-            <br></br>                                                                                               
-            <button onClick={onAdd}>Agregar al Carrito</button>
-        </div>
+        <section className="itemCount">
+            {
+           QuitarItemCount ? <section><button onClick={eliminarItem}>-</button><span>{addItem}</span><button onClick={agregarItem}>+</button><br></br></section> : null
+            }                                                                              
+              <button onClick={()=>setQuitarItemCount(false)} onClick={onAdd}>Agregar al Carrito</button>
+                <p>Agregaste {addItem} items al carrito</p>      
+        </section>
     )
 }

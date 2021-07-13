@@ -4,35 +4,47 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export const ItemDetail = ({ item }) => {
-   const [itemComprado, setItemComprado] = useState(0)
-   const [ItemCompra, setItemCompra] = useState(0)
+   const [botonActivo, setBotonActivo] = useState(false)
+   const [ItemComprados, setItemComprados] = useState([])
 
-    const onAdd = (event) => {
-        //Almacenar el valor de itemCount
-    setItemComprado(event.target.value)
-    setItemCompra((event.target.value)*item.precio)
-        //Desaparecer el ItemCount y aparece el button terminar compra
-    document.getElementById("itemAgregado").style.display="none"
-    document.getElementById("itemTerminarCompra").style.display="block"
- }
 
-     
+    const onAdd = (e) => {
+      console.log(e.target.value)
+        let aux= null
+    {
+       ItemComprados.includes(e.target.value) ? (
+         aux = ItemComprados.filter(element=>element!== e.target.value)
+       ) : (
+         aux = ItemComprados.concat(e.target.value)  
+       ) 
+       setItemComprados(aux)
+
+       //Con esta condicion se hace aparecer el boton de terminar compra que está deshabilitado
+
+       if(aux.length > 0){
+         setBotonActivo(true)
+         } else {
+         setBotonActivo(false)
+         }
+    }
+  }
+ 
 
     return(
         <section>   
             <img className="itemDetail" src={item.picture}></img>
-              <p className="itemDescipcion">{item.descripcion}</p>
-                <span className="itemDescipcion">{item.precio}</span>
-             <section id="itemAgregado">
-                <ItemCount initial={1} stock={10} onAdd={onAdd} />
-             </section>  
-         {/*boton oculto hasta que el usuario haga click */}
-           <section id="itemTerminarCompra" className="finalCompra">
-             <p>Tu compra es de: {itemComprado} {item.descripcion} por ${itemComprado} tiene un total de ${ItemCompra}</p>
+              <p className="itemDescripcion">{item.descripcion}</p>
+                <span className="itemDescripcion">{item.precio}</span>
+                <section>
+                   <ItemCount initial={1} stock={10} onAdd={onAdd} value={item.id}/> 
+                </section>
+              
+               {/*boton oculto hasta que el usuario haga click */}
+             <section>
                <Link to={'/cart'}>
-                 <button>Termina tu compra</button>
+                 <button hidden={!botonActivo}>Termina tu compra</button>
                </Link>
-           </section>
+            </section>
         </section>
     )
 }
