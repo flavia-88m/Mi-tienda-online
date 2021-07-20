@@ -3,34 +3,37 @@ import '../ItemCount/ItemCount.css'
 import { useState } from 'react'
 
 export const ItemCount = ({ initial, stock, onAdd }) => {
-  const [addItem, setAddItem] = useState(initial)
+  const [addItems, setAddItem] = useState(initial)
   const [newStock, setStock] = useState(stock)
-  const [QuitarItemCount, setQuitarItemCount] = useState(true)
+  
 
 
   const eliminarItem = () => {
-    if (addItem > 0) {
-        setAddItem(addItem - 1)
+    if (addItems > 0) {
+        setAddItem(addItems - 1)
         setStock(newStock + 1 )
     }
 }
 
   const agregarItem = () => {
-      if (addItem < stock ){
-          setAddItem(addItem + 1)
+      if (addItems < stock ){
+          setAddItem(addItems + 1)
           setStock(newStock - 1)
     }
 }
 
 
-
+//Con un ternario se pregunta si QuitarItemCount es true mostrame el section sino no me muestres nada
     return (
         <section className="itemCount">
-            {
-           QuitarItemCount ? <section><button onClick={eliminarItem}>-</button><span>{addItem}</span><button onClick={agregarItem}>+</button><br></br></section> : null
-            }                                                                              
-              <button onClick={()=>setQuitarItemCount(false)} onClick={onAdd}>Agregar al Carrito</button>
-                <p>Agregaste {addItem} items al carrito</p>      
+           <section>
+             <button onClick={eliminarItem}>-</button>
+              <span>{addItems}</span>
+               <button onClick={agregarItem}>+</button>
+               <br></br>
+             </section>                                                                            
+                <button onClick={()=>onAdd(addItems)}>Agregar al Carrito</button>
+                <p>Agregaste {addItems} items al carrito</p>      
         </section>
     )
 }

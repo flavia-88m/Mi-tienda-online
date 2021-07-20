@@ -77,7 +77,7 @@ export const ItemListContainer = (props) => {
         const getItemsShop = new Promise (( resolve, reject) => {
            
             setTimeout(()=> {
-              resolve(products.filter((item) => item.categoryId == id))
+              resolve(products.filter((item) => item.categoryId === id))
             },2000)
       
         })

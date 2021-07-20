@@ -3,12 +3,17 @@ import { NavBar } from './components/navBar/navBar'
 import { ItemListContainer } from './pages/ItemListContainer/ItemListContainer'
 import { ItemDetailContainer } from './pages/ItemDetailContainer/itemDetailContainer'
 import '../src/App.css'
+import { CartProvider } from "./CartContext/CartContext";
+import { CartWidget } from "./components/cartWidget/cartWidget";
+
 
 
 export const App = () => {
   const welcome = 'HELLO BABES!'
   const sayHello = 'Te invitamos a que chusmees todo lo que tenemos para ofrecerte'
-  return(
+
+  return (
+  <CartProvider>
     <Router>
       <main className="App">
       <NavBar/>
@@ -23,9 +28,13 @@ export const App = () => {
            <Route exact path="/item/:id">
                <ItemDetailContainer />
            </Route>
+           <Route exact path="/cart">
+               <CartWidget />
+           </Route>
         </Switch>
      </main>
    </Router>
+   </CartProvider>
   )
 }
 
