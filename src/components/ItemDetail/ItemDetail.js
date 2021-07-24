@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../../CartContext/CartContext'
 
 
-export const ItemDetail = ({ item }) => {
+export const ItemDetail = ({item}) => {
    const [botonActivo, setBotonActivo] = useState(false)
    const { addItem } = useContext(CartContext)
   
@@ -15,6 +15,7 @@ export const ItemDetail = ({ item }) => {
     addItem(item, quantity)
   }
  
+ const { precio, picture,descripcion} = item
 
     return (
         <section>   

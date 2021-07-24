@@ -5,6 +5,7 @@ import { ItemDetailContainer } from './pages/ItemDetailContainer/itemDetailConta
 import '../src/App.css'
 import { CartProvider } from "./CartContext/CartContext";
 import { CartWidget } from "./components/cartWidget/cartWidget";
+import { Cart } from "./components/Cart/cart";
 
 
 
@@ -29,7 +30,7 @@ export const App = () => {
                <ItemDetailContainer />
            </Route>
            <Route exact path="/cart">
-               <CartWidget />
+               <Cart />
            </Route>
         </Switch>
      </main>

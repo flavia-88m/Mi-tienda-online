@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 
 
 export const CartContext = createContext()
@@ -6,7 +6,8 @@ export const CartContext = createContext()
 
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
-
+    const [cartQuantity, setCartQuantity]= useState(0)
+    const [ totalDeItems, setTotalDeItems ] = useState(0)
   
  const addItem = (item, quantity) =>{
         if(cart.length > 0) {
@@ -17,7 +18,8 @@ export const CartProvider = ({children}) => {
             newCart[position].quantity += quantity
             //se actualiza la cantidad de ese item en específico
             setCart(newCart)
-          } else { setCart( [...cart, {item,quantity} ] )}
+            setCartQuantity(cartQuantity + quantity)
+          } else { setCart([...cart, {item, quantity}])}
           } else { setCart([{item, quantity}])
         }
  }
@@ -30,6 +32,7 @@ export const CartProvider = ({children}) => {
    // Se limpia el carrito al cambiar su estado
     const clear = ()=> {
        setCart([])
+       setCartQuantity(0)
     }
 
 
@@ -38,10 +41,29 @@ export const CartProvider = ({children}) => {
       cart.some((obj) => obj.item.id === id)
     }
 
+//Actualiza el contador que muestra el icono del carrito en el margen superior derecha
+ 
+    const actualizarEstadoCarrito=()=> {
+      let total = 0
+      if(cart.length > 0) {
+        cart.forEach((item) => total += item.quantity)
+        }
+        setCartQuantity(total)
+      }
 
+      //suma el total con useEffect
+
+      useEffect(()=>{
+       const totalItems = cart.map(({item, quantity})=>item.precio * quantity).reduce(
+          (cartTotal, sumaItemsTotal)=> cartTotal + sumaItemsTotal, 0
+      )
+      setTotalDeItems(totalItems)
+      actualizarEstadoCarrito(cart);
+  },[cart])
+ 
 
 return(
- <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>{children}</CartContext.Provider>
+ <CartContext.Provider value={{ cart, addItem, removeItem, clear, cartQuantity ,totalDeItems}}>{children}</CartContext.Provider>
 )
 
 }

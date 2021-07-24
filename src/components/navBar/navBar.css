@@ -13,6 +13,7 @@ nav {
     margin: 0 10px;
     margin-left: 130px;
     padding-left:35px;
+ 
 }
 
 .navbar-container {
@@ -28,6 +29,6 @@ nav {
 padding-left: 10px;
 }
 
-li:hover {
+li:hover{
     border-bottom: 3px solid pink;
 }
