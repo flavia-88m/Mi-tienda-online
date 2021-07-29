@@ -1,14 +1,17 @@
+import { Fragment } from 'react'
 import { Item } from '../Item/Item'
 import '../ItemList/ItemList.css'
 
-export const ItemList = ({ items }) =>{
+export const ItemList = ({catalogo}) =>{
+ const mapDeProductos = catalogo.map((item)=> <Item item={item} key={item.id}/>)
     return(
-        <>
-         {items.length === 0 ? (
-            <span className="loading"></span>
+        <Fragment>
+        { mapDeProductos.length === 0 
+         ? (<span className="loading">No hay productos disponibles para esta categoría</span>
           ) : (
-            items.map(item =><Item key={item.id} item={item}/>)
-          )}
-        </>
+            mapDeProductos
+          )
+          }
+        </Fragment>
     )
 }

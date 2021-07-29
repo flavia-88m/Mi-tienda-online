@@ -15,11 +15,10 @@ export const ItemDetail = ({item}) => {
     addItem(item, quantity)
   }
  
- const { precio, picture,descripcion} = item
 
     return (
         <section>   
-            <img className="itemDetail" src={item.picture}></img>
+            <img className="itemDetail" src={item.pictureUrl}></img>
               <p className="itemDescripcion">{item.descripcion}</p>
                 <span className="itemDescripcion">{item.precio}</span>   
                {/*Con el ternario establecemos la condicion si botonActivo esta clickeado sino mostrame el ItemCount */}

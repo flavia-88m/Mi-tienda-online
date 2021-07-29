@@ -2,12 +2,47 @@ import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../../components/ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { Loading } from '../../components/Loading/loading'
+import { dataBase } from '../../Firebase/firebase'
 
 
 export const ItemListContainer = (props) => {
   const { id } = useParams()
+  const [loading, setLoading] = useState(false)
   const [catalogo, setCatalogo] = useState([])
-  const products =[
+
+
+  useEffect(()=> {
+     setLoading(true)
+     const db = dataBase
+     const itemCollection = db.collection("productos")
+     
+     itemCollection.get().then((querySnapshot)=>{
+        if(querySnapshot.size === 0) {
+           console.log('No hay productos disponibles');
+        } else {
+           if(!id){
+               /*todos los productos*/
+            setCatalogo(querySnapshot.docs.map((doc)=>{
+               return {id:doc.id, item: {...doc.data()}}
+            }))
+        } else {
+              //Filtrado según categoría 
+              const data = (querySnapshot.docs.map((doc)=> {
+                return {id: doc.id, item: {...doc.data()}}
+              }))
+              const dataCatalogo = data.filter((producto)=> producto.item.category === id)
+               setCatalogo(dataCatalogo)
+           }
+         }
+         }).catch((error)=> {
+         console.log("Hubo un error al cargar los productos", error);
+      }).finally(()=> {
+         setLoading(false);
+      }); 
+  }, [id]);
+
+  /*const products =[
     {
         id: 1,
         pictureUrl:"https://images.unsplash.com/photo-1512201078372-9c6b2a0d528a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=752&q=80",
@@ -87,15 +122,20 @@ export const ItemListContainer = (props) => {
             setCatalogo(result)
         })
             
-    },[id])
+    },[id])*/
   
 
     return (
-        <div>
+       <section>
           <h1 className="title">{props.greeting}</h1>
           <h2>{props.greeting2}</h2>
-           <ItemList items={catalogo}/>
-        </div>
+           {
+              loading 
+              ? <Loading/>
+              : <ItemList items= {catalogo}/>
+           }
+       </section>
+        
       
      
         

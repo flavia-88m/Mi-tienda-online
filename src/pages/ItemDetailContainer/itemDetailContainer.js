@@ -1,12 +1,36 @@
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
+import { Loading } from "../../components/Loading/loading"
+import { dataBase } from "../../Firebase/firebase"
 
 export const ItemDetailContainer = () => {
     const { id } = useParams()
-    const [ Item, setItem ] = useState([])
+    const [ item, setItem ] = useState([])
+    const [ loading, setLoading ] = useState(false)
 
-    const productDetail = [
+
+    useEffect (() => {
+       setLoading(true)
+       const db = dataBase 
+       const itemCollection = db.collection("productos");
+       const product = itemCollection.doc(id);
+
+       product.get().then((doc)=> {
+          if(!doc.exists) {
+             console.log("¡El producto no existe! : (")
+             return
+          }
+          console.log("¡Producto encontrado!");
+          setItem({id: doc.id, item: {...doc.data()}});
+       }).catch((error)=>{
+          console.log("Error al buscar los productos", error);
+       }).finally(()=>{
+          setLoading(false);
+       });
+    },[id]);
+
+    /* const productDetail = [
     {
         id: 1,
         picture:"https://images.unsplash.com/photo-1512201078372-9c6b2a0d528a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=752&q=80",
@@ -75,11 +99,16 @@ export const ItemDetailContainer = () => {
           setItem(result)
       })
 
- },[id])
+ },[id])*/
     
     return(
-        <>
-        <ItemDetail item={Item}/>
-        </>
+        <Fragment>
+        { loading
+           ?  <Loading/>
+        :  loading
+            ? <Loading/>
+            : <ItemDetail item={item} key={item.id}/>
+        }
+        </Fragment>
     )
 }
