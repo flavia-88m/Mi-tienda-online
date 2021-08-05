@@ -9,7 +9,7 @@ import { dataBase } from '../../Firebase/firebase'
 export const ItemListContainer = (props) => {
   const { id } = useParams()
   const [loading, setLoading] = useState(false)
-  const [catalogo, setCatalogo] = useState([])
+  const [catalogoProductos, setCatalogoProductos] = useState([])
 
 
   useEffect(()=> {
@@ -23,7 +23,7 @@ export const ItemListContainer = (props) => {
         } else {
            if(!id){
                /*todos los productos*/
-            setCatalogo(querySnapshot.docs.map((doc)=>{
+            setCatalogoProductos(querySnapshot.docs.map((doc)=>{
                return {id:doc.id, item: {...doc.data()}}
             }))
         } else {
@@ -32,15 +32,15 @@ export const ItemListContainer = (props) => {
                 return {id: doc.id, item: {...doc.data()}}
               }))
               const dataCatalogo = data.filter((producto)=> producto.item.category === id)
-               setCatalogo(dataCatalogo)
+               setCatalogoProductos(dataCatalogo)
            }
          }
          }).catch((error)=> {
-         console.log("Hubo un error al cargar los productos", error);
-      }).finally(()=> {
+            console.log("Hubo un error al cargar los productos", error);
+         }).finally(()=> {
          setLoading(false);
-      }); 
-  }, [id]);
+         }); 
+   }, [id]);
 
   /*const products =[
     {
@@ -124,7 +124,6 @@ export const ItemListContainer = (props) => {
             
     },[id])*/
   
-
     return (
        <section>
           <h1 className="title">{props.greeting}</h1>
@@ -132,7 +131,7 @@ export const ItemListContainer = (props) => {
            {
               loading 
               ? <Loading/>
-              : <ItemList items= {catalogo}/>
+              : <ItemList catalogoProductos= {catalogoProductos}/>
            }
        </section>
         

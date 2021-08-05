@@ -6,7 +6,7 @@ import { dataBase } from "../../Firebase/firebase"
 
 export const ItemDetailContainer = () => {
     const { id } = useParams()
-    const [ item, setItem ] = useState([])
+    const [ item, setItem ] = useState("")
     const [ loading, setLoading ] = useState(false)
 
 
@@ -18,17 +18,20 @@ export const ItemDetailContainer = () => {
 
        product.get().then((doc)=> {
           if(!doc.exists) {
-             console.log("¡El producto no existe! : (")
+             console.log("¡El producto no existe!")
              return
           }
           console.log("¡Producto encontrado!");
           setItem({id: doc.id, item: {...doc.data()}});
+            return
        }).catch((error)=>{
           console.log("Error al buscar los productos", error);
        }).finally(()=>{
           setLoading(false);
        });
     },[id]);
+    console.log("itemDetailContainer")
+
 
     /* const productDetail = [
     {
@@ -105,9 +108,7 @@ export const ItemDetailContainer = () => {
         <Fragment>
         { loading
            ?  <Loading/>
-        :  loading
-            ? <Loading/>
-            : <ItemDetail item={item} key={item.id}/>
+           : <ItemDetail item={item} key={item.id}/>
         }
         </Fragment>
     )

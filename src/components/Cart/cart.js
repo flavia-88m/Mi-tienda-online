@@ -24,6 +24,7 @@ export const Cart =() => {
             <div key={obj.item.id}>
               <ul>
                   <li>Detalle del Producto: {obj.item.descripcion}</li>
+                  <li>Categoría: {obj.item.category}</li>
                   <li>Precio por unidad: {(obj.item.precio)}</li>
                   <li>Cantidad {(obj.quantity)}</li>
                   <li> Total $ {(obj.quantity)*(obj.item.precio)}</li>
