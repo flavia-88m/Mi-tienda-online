@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../../CartContext/CartContext'
 
 
-export const ItemDetail = ({item}) => {
+export const ItemDetail = ({ item }) => {
    const [botonActivo, setBotonActivo] = useState(false)
    const { addItem } = useContext(CartContext)
   
@@ -27,8 +27,8 @@ export const ItemDetail = ({item}) => {
                     <button>Termina tu compra</button>
                   </Link>
                ) : (
-                <ItemCount initial={1} stock={10} onAdd={onAdd} value={item.id}/> 
-               )
+                <ItemCount initial={1} stock={item.stock} onAdd={onAdd} value={item.id}/>
+                )
                }     
         </section>
     )

@@ -6,6 +6,8 @@ import '../src/App.css'
 import { CartProvider } from "./CartContext/CartContext";
 import { CartWidget } from "./components/cartWidget/cartWidget";
 import { Cart } from "./components/Cart/cart";
+import { Checkout } from "./components/Checkout/checkout";
+import { NotFound } from "./components/NotFound/notFound";
 
 
 
@@ -23,7 +25,7 @@ export const App = () => {
            <Route exact path="/">
                <ItemListContainer />
            </Route>
-           <Route exact path="/category/:id">
+           <Route exact path="/category/:categoryId">
                <ItemListContainer />
            </Route>
            <Route exact path="/item/:id">
@@ -31,6 +33,12 @@ export const App = () => {
            </Route>
            <Route exact path="/cart">
                <Cart />
+           </Route>
+           <Route exact path="/checkout">
+               <Checkout />
+           </Route>
+           <Route path="*">
+             <NotFound/>
            </Route>
         </Switch>
      </main>

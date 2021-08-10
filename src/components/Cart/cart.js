@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 
 
+
 export const Cart =() => {
      const { cart, removeItem, clear } = useContext(CartContext)
      let carrito = false
@@ -11,12 +12,7 @@ export const Cart =() => {
          carrito = true
       }
 
-      const finalizarCompra = () => {
-        alert("¡¡Muchas gracias por su compra!!")
-        clear()
-    }
-      
-
+ 
     return(
         <section>
             <h1>Mi Carrito</h1>
@@ -36,10 +32,10 @@ export const Cart =() => {
               <button onClick={()=>{clear()}}>ELIMINAR TODO</button>
            </div>
        { (cart.length > 0)
-           ? (<button onClick={()=>{finalizarCompra()}}>FINALIZAR COMPRA</button>)
+           ? (<Link to={'/checkout'}>FINALIZAR COMPRA</Link>)
             : (<div>
                 <p>¡Todavía no has agregado items al carrito!</p>
-                <Link exact to={'/ItemDetailContainer'}>Continuar Compando</Link> 
+                <Link exact to={'/'}>Continuar Compando</Link> 
                </div> 
                )
        } 

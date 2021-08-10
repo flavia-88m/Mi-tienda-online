@@ -1,26 +1,30 @@
 import logo from '../navBar/logo.jpg'
 import '../navBar/navBar.css'
 import { CartWidget } from '../cartWidget/cartWidget'
-import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
 
 
 export const NavBar = () => {
-const categories = ['Home', 'Carteras', 'Gafas', 'Oufits']
 
     return (
-      
         <nav>
             <ul className="navbar-container">
-                <Link to="/">
+                <NavLink to="/">
                    <img className="brand"src={logo} alt="logo"/>
-                </Link>
-                {categories.map((category) =>(
-                      <NavLink to={`/category/${category}`}>
-                         <li className="linkNav">{category}</li>
-                      </NavLink>
-                  ))}
+                </NavLink>
+                <NavLink exact to="/">
+                    <li className="linkNav">Home</li>
+                </NavLink>
+                <NavLink exact to="/category/carteras">
+                    <li className="linkNav">Carteras</li>
+                </NavLink>
+                <NavLink exact to="/category/gafas">
+                    <li className="linkNav">Gafas</li>
+                </NavLink>
+                <NavLink exact to="/category/oufits">
+                   <li className="linkNav">Oufits</li>
+                </NavLink>
                 <li><CartWidget/></li>
             </ul>
         </nav>
