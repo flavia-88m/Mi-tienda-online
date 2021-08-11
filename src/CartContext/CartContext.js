@@ -43,7 +43,7 @@ export const CartProvider = ({children}) => {
 
 //Actualiza el contador que muestra el icono del carrito en el margen superior derecha
  
-    const actualizarEstadoCarrito=()=> {
+    const actualizarEstadoCarrito=(cart)=> {
       let total = 0
       if(cart.length > 0) {
         cart.forEach((item) => total += item.quantity)

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 
 
 
-
 export const Cart =() => {
      const { cart, removeItem, clear } = useContext(CartContext)
      let carrito = false

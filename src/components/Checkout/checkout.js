@@ -3,7 +3,6 @@ import { dataBase } from '../../Firebase/firebase'
 import { CartContext } from '../../CartContext/CartContext'
 import { Fragment, useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import firebase from 'firebase'
 import { Loading } from '../Loading/loading'
 
 export const Checkout = () => {
@@ -86,8 +85,10 @@ return(
                  <label>E-mail</label>
                     <input type="email" name="email" value={userData.email} placeholder="ingresar e-mail" onChange={handleChangeInput}></input>
               </form>
+              {form ? <button>Finalizar compra</button> : <button onClick={()=> compraOk()}>Finalizar compra</button>}
           </section>
-        </section>) 
+        </section>
+        ) 
         : <Link extact to="/">Volver al home</Link> 
         )
        }

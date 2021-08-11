@@ -4,7 +4,6 @@ import { ItemListContainer } from './pages/ItemListContainer/ItemListContainer'
 import { ItemDetailContainer } from './pages/ItemDetailContainer/itemDetailContainer'
 import '../src/App.css'
 import { CartProvider } from "./CartContext/CartContext";
-import { CartWidget } from "./components/cartWidget/cartWidget";
 import { Cart } from "./components/Cart/cart";
 import { Checkout } from "./components/Checkout/checkout";
 import { NotFound } from "./components/NotFound/notFound";
