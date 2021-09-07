@@ -1,34 +1,45 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-nav {
-    background-color: white;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.linkNav {
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 10px;
-    margin-left: 130px;
-    padding-left:35px;
- 
+.navbar {
+width: 80%;
+margin: auto;
+padding: 35px 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
 
-.navbar-container {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    margin-right: 0 0 20px;
-    padding: 50px 20px;
-    text-decoration: none;
+.navbar ul li {
+list-style: none;
+display: inline-block;
+margin:0 20px;
+font-family: 'Roboto', sans-serif;
+font-size: 18px;
+font-weight: bold;
+color:black;
+position: relative;
+padding-top: 35px;
 }
 
-.brand {
-padding-left: 10px;
+.navbar ul li::before {
+content: "";
+height: 3px;
+width: 0%;
+background-color: pink;
+position: absolute;
+left: 0;
+bottom: -12px;
+transition: 0.4s ease-out;
 }
 
-li:hover{
-    border-bottom: 3px solid pink;
+.navbar ul li:hover:before{
+ width: 100%;
 }
+
+

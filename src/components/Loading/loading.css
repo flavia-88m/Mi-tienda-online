@@ -1,5 +1,32 @@
-.loading {
-    text-align: center;
-    background-color: rgb(230, 122, 152);
-    color: white;
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+.spinner-loading {
+color: black;
+border-radius: 6px;
+font-size: 40px;
+text-align: center;
+font-family: 'Gloria Hallelujah', cursive;
+margin-top: 80px;
+}
+
+.spinner { 
+border: 5px solid rgba(0,0,0, .1);
+width: 56px;
+height: 56px;
+border-radius: 50%;
+border-left-color: rgb(238, 130, 216);
+margin-right: 500px;
+margin-left: 500px;
+
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

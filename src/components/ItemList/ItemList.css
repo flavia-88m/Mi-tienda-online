@@ -1,6 +1,14 @@
-.loading{
+.loading {
     font-size: 30px;
     font-weight: bolder;
     background-color: palevioletred;
     color: white;
+}
+
+.item-List {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }

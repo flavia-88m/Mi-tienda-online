@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Glory:wght@300;400&display=swap');
 
-.title{
+.title {
+ margin-top: 50px;
  font-family: 'Permanent Marker', cursive;
- font-size: 40px;
+ font-size: 45px;
+ text-align:center;
+}
+
+h3 {
+ font-family: 'Gloria Hallelujah', cursive;
+ font-family: 'Glory', sans-serif;
+ text-align:center;
+}
+
+.item-list-container {
+flex-direction: row;
+flex-wrap: wrap;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 15px 0px;
 }

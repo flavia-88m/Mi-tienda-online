@@ -1,26 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-*{
-    padding: 0;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+ padding: 0;
+ margin: 0;
 }
 
-.itemCount{
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    padding-left: 300px;
-    margin-bottom: 20px;
+.title-checkout {
+  margin-top: 50px; 
+  margin-bottom: 40px;
+  font-family: 'Permanent Marker', cursive; 
+  font-size: 35px;
 }
 
+.checkout-container ul li {
+   list-style: none;
+   font-family: 'Roboto', sans-serif;
+   font-size: 18px;
+}
 
-/*background-image: -webkit-linear-gradient(top, #EECDA3, #EF629F);*/
+.font-checkout {
+   font-weight: bold;
+   font-family: 'Roboto', sans-serif;
+   font-size: 18px;
+}
 
 .btn {
     margin: 5px 5px 5px 5px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    background: color #EF629F;
+    background-color:#EF629F;
     background-image: -webkit-linear-gradient(top, #EECDA3, #EF629F);
     background-image: -moz-linear-gradient(top, #EECDA3, #EF629F);
     background-image: -ms-linear-gradient(top, #EECDA3, #EF629F);
@@ -37,9 +46,8 @@
     margin-bottom: 8px;
 }
 
-/*background-image: -webkit-linear-gradient(top, #EF629F, #EECDA3);*/
-.btn:hover{
-    background:#ef629f;
+.btn:hover {
+    background:#EF629F ;
     background-image: -webkit-linear-gradient(top, #EF629F, #EECDA3);
     background-image: -moz-linear-gradient(top, #EF629F, #EECDA3);
     background-image: -ms-linear-gradient(top, #EF629F, #EECDA3);
@@ -48,9 +56,18 @@
     text-decoration: none;
   }
 
-
- .item-count-p {
-    font-size: 16px;
+.link-volver-home {
+    font-size: 22px;
+    text-decoration: none;
+    margin-top: 90px;
+    padding-bottom: 50px;
+    color: black;
+    text-shadow: 3px 2px 1px #9daef5;
+    font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-weight: bold; 
- }
+    font-style: italic;
+}
+
+.link-volver-home:hover {
+     color:#EF629F; 
+}
