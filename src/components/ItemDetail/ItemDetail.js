@@ -19,7 +19,7 @@ export const ItemDetail = ({item}) => {
   };
 
   return (
-    <section>
+    <section className="itemDetail-container">
       <img
         className='itemDetail'
         src={item.pictureUrl}
@@ -31,7 +31,7 @@ export const ItemDetail = ({item}) => {
       {/* Con el ternario establecemos la condicion si botonActivo
        esta clickeado sino mostrame el ItemCount */}
       {botonActivo ? (
-      <Link to={'/cart'}>
+      <Link to={'/cart'} className="button-TerminarCompra">
 	  	<button className="btn">Termina tu compra</button>
       </Link>
 		   	) : (

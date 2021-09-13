@@ -3,9 +3,11 @@
   padding: 0;
   margin: 0;
 }
-.item-container {
+.item-link {
   text-decoration: none;
 }
+
+
 .items {
   display:flex;
   flex-direction: column;

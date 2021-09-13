@@ -8,7 +8,7 @@ export const Item = ({item}) => {
   return (
     // eslint-disable-next-line react/jsx-no-undef
     <Fragment className="item-container">
-      <Link to={`/item/${item.id}`}>
+      <Link to={`/item/${item.id}`} className="item-link">
         <section id={item.id} className="items">
           <img className="images" src={item.pictureUrl} alt="img"/>
           <p className="itemPrice">{item.title}</p>

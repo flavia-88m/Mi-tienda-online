@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.itemDetail-container {
+padding-bottom: 200px;
+}
+
 .itemDetail {
     margin-top: 80px;
     width: 600px;
@@ -15,6 +19,14 @@
     padding-left: 100px;
     padding-bottom: 50px;
     text-align: center;
+}
+
+.itemDetail:hover {
+    transform: scale(1.4);
+}
+
+.itemDetail {
+     transition: 2s;
 }
 
 .itemDescripcion {
@@ -36,6 +48,6 @@
     display: none;
 }
 
-.btn-terminarC {
-    text-align: center;
+.button-TerminarCompra{
+    padding-bottom: 90px;
 }

@@ -19,9 +19,9 @@ export const App = () => {
   return (
     <CartProvider>
       <Router>
-        <main>
+        <main className="App">
           <NavBar />
-          <Switch className='App'>
+          <Switch >
             <Route exact path='/'>
               <ItemListContainer greeting={welcome} greeting2={sayHello} />
             </Route>

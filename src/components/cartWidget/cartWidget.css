@@ -10,6 +10,7 @@
 
 .cartQuantity{
   font-size: 16px;
+  text-align: center;
   font-family: 'Roboto', sans-serif;  
   position: absolute;
   font-weight: 10px;
@@ -18,10 +19,10 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background-color: pink;
+  background-color: #fc67fa;
   margin: auto;
   text-shadow: 3px 2px 1px #9daef5;
-  -webkit-box-shadow: 6px 5px 24px #666666;
-  -moz-box-shadow: 6px 5px 24px #666666;
-  box-shadow: 5px 4px 24px #666666;
+  -webkit-box-shadow: 5px 5px 20px #666666;
+  -moz-box-shadow: 5px 5px 20px #666666;
+  box-shadow: 5px 2px 20px #666666;
 }

@@ -37,18 +37,19 @@ export const Cart =() => {
           </ul>
         </div>,
       )}
-      <div>
+      <div className="btn-container">
         <button className="btn" onClick={()=>{
           clear();
         }}>ELIMINAR TODO</button>
       </div>
       { (cart.length > 0) ?
-           (<Link className="link-finalizar-compra" to={'/checkout'}>
-             FINALIZAR COMPRA</Link>) :
-            (<div>
+           (<div className="link-finalizarC">
+             <Link to={'/checkout'}
+               className="link-finalizarC">FINALIZAR COMPRA</Link></div>) :
+            (<div className="mensaje-continuar-comprando">
               <p className="p-cart">
                 ¡Todavía no has agregado items al carrito!</p>
-              <Link className="link-finalizar-compra" exact to={'/'}>
+              <Link exact to={'/'} className="link-finalizar-compra">
                 Continuar Compando</Link>
             </div>
                )

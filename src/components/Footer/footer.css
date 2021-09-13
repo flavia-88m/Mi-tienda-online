@@ -1,51 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 
 footer {
     width: 100%;
-    padding:50px 0px;
+    padding:80px 0px;
     background: color #fc67fa;
     background-image: -webkit-linear-gradient(top, #f4c4f3, #fc67fa);
     background-image: -moz-linear-gradient(top, #f4c4f3, #fc67fa);
     background-image: -ms-linear-gradient(top, #f4c4f3, #fc67fa);
     background-image: -o-linear-gradient(top, #f4c4f3, #fc67fa);
     background-image: linear-gradient(to bottom, #f4c4f3, #fc67fa);
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #999797;
+    box-shadow: 6px 5px 24px #979696;
     background-size: cover;
+    padding-bottom: 30px;
 }
 
-.footer-container {
+.main-container {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
 }
 
-.box-footer {
-    color: black;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-}
 
-.box-footer li {
+.col ul li {
 list-style: none;
+color: black;
+padding-top: 5px;
 }
 
-.box-footer .a-cerca-de {
-    max-width: 350px;
-    margin-top: 20px;
+.col ul li:hover {
+color: white;
+font-weight: 600;
+}
+
+.navLink-style {
+    text-decoration: none;
+
+}
+
+
+.a-cerca-de {
     font-weight: 500;
     font-size: 18px;
 }
 
-.box-footer h2 {
+img {
+    padding-bottom: 5px;
+    
+}
+
+h2 {
+   font-size: 25px;
    margin-bottom: 30px;
    font-weight: 700;
 }
@@ -54,4 +59,5 @@ list-style: none;
     max-width:1200px;
     margin:auto;
     text-align: center;
+    color: rgb(65, 63, 63);
 }

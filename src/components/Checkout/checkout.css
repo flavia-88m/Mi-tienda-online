@@ -7,7 +7,7 @@
 }
 
 .title-checkout {
-  margin-top: 50px; 
+  margin-top: 20px; 
   margin-bottom: 40px;
   font-family: 'Permanent Marker', cursive; 
   font-size: 35px;
@@ -19,42 +19,41 @@
    font-size: 18px;
 }
 
+
+.form-container {
+margin: 60px 350px 60px 350px; 
+background-color: rgba(202, 199, 199, 0.5);
+padding: 30px;
+border-radius: 4px;
+}
+
+.row {
+   margin-top: 10px;
+   margin-bottom: 20px;
+}
+
+.name-checkout {
+   margin-right: 2px;
+}
+
+label {
+   font-weight: 700;
+}
+
 .font-checkout {
    font-weight: bold;
    font-family: 'Roboto', sans-serif;
    font-size: 18px;
 }
 
-.btn {
-    margin: 5px 5px 5px 5px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    background-color:#EF629F;
-    background-image: -webkit-linear-gradient(top, #EECDA3, #EF629F);
-    background-image: -moz-linear-gradient(top, #EECDA3, #EF629F);
-    background-image: -ms-linear-gradient(top, #EECDA3, #EF629F);
-    background-image: -o-linear-gradient(top, #EECDA3, #EF629F);
-    background-image: linear-gradient(to bottom, #EECDA3, #EF629F);
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 28px;
-    text-shadow: 3px 2px 1px #9daef5;
-    -webkit-box-shadow: 6px 5px 24px #666666;
-    -moz-box-shadow: 6px 5px 24px #666666;
-    box-shadow: 5px 4px 24px #666666;
-    text-decoration: none;
-    margin-bottom: 8px;
+.button-finalizar {
+margin-bottom: 30px;
 }
 
-.btn:hover {
-    background:#EF629F ;
-    background-image: -webkit-linear-gradient(top, #EF629F, #EECDA3);
-    background-image: -moz-linear-gradient(top, #EF629F, #EECDA3);
-    background-image: -ms-linear-gradient(top, #EF629F, #EECDA3);
-    background-image: -o-linear-gradient(top, #EF629F, #EECDA3);
-    background-image: linear-gradient(to bottom, #EF629F, #EECDA3);
-    text-decoration: none;
-  }
+.volver-al-home {
+   margin-top: 100px;
+   margin-bottom: 100px;
+}
 
 .link-volver-home {
     font-size: 22px;

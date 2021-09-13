@@ -8,6 +8,11 @@ import {NavLink} from 'react-router-dom';
 export const NavBar = () => {
   return (
     <nav>
+      <section className="navbar-superior">
+        <span className="text-navbar">
+        ♥¡¡NEWS!!ENVÍOS DISPONIBLES
+        A DOMICILIO A TODO EL PAÍS♥
+        </span></section>
       <section className="navbar">
         <NavLink to="/">
           <img src={logo} alt="logo"/>
