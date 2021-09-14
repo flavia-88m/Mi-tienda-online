@@ -21,7 +21,10 @@
 
 
 .form-container {
-margin: 60px 350px 60px 350px; 
+width: 60%;
+margin: auto;
+margin-top: 50px;
+margin-bottom: 90px;
 background-color: rgba(202, 199, 199, 0.5);
 padding: 30px;
 border-radius: 4px;

@@ -28,7 +28,7 @@ export const ItemCount = ({initial, stock, onAdd}) => {
   // es true mostrame el section sino no me muestres nada
   return (
     <section className="itemCount">
-      <section>
+      <section className="itemCount-content">
         <button className="btn" onClick={eliminarItem}>-</button>
         <span>{addItems}</span>
         <button className="btn" onClick={agregarItem}>+</button>

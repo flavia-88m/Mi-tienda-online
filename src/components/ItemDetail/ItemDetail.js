@@ -7,6 +7,7 @@ import {ItemCount} from '../ItemCount/ItemCount';
 import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {CartContext} from '../../CartContext/CartContext';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 export const ItemDetail = ({item}) => {
@@ -21,16 +22,18 @@ export const ItemDetail = ({item}) => {
   return (
     <section className="itemDetail-container">
       <img
-        className='itemDetail'
+        className='img-itemDetail'
         src={item.pictureUrl}
         alt='foto del producto'
       ></img>
-      <p className='item-title'>{item.title}</p>
-      <p className='itemDescripcion'>{item.descripcion}</p>
-      <span className='itemDescripcionp'>ARS ${item.precio}</span>
-      {/* Con el ternario establecemos la condicion si botonActivo
+      <section className='itemDetail'>
+        <p className='item-title'>{item.title}</p>
+        <p>{item.descripcion}</p>
+        <p>ARS ${item.precio}</p>
+        {/* Con el ternario establecemos la condicion si botonActivo
        esta clickeado sino mostrame el ItemCount */}
-      {botonActivo ? (
+        <section className="itemCount-container">
+          {botonActivo ? (
       <Link to={'/cart'} className="button-TerminarCompra">
 	  	<button className="btn">Termina tu compra</button>
       </Link>
@@ -42,6 +45,8 @@ export const ItemDetail = ({item}) => {
 				  value={item.id}
 		  />
 			)}
+        </section>
+      </section>
     </section>
   );
 };
